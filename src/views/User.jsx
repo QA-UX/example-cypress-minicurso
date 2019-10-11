@@ -17,32 +17,39 @@ import {
 class User extends React.Component {
   state = {
     alunos: [],
-    aluno: {
-      nome: '',
-      sobrenome: '',
-      email: '',
-      endereco: '',
-      cidade: '',
-      pais: '',
-      cep: ''
-    }
+    nome: '',
+    sobrenome: '',
+    email: '',
+    endereco: '',
+    cidade: '',
+    pais: '',
+    cep: ''
   }
 
   handleChange = (event) => {
     const { value } = event.target;
-    console.log(value);
-    this.setState({ [event.target.name] : value});
+    this.setState({ [event.target.name]: value });
   }
 
   handleSubmit = (event) => {
-    alert('Um nome foi enviado: ' + this.state.aluno);
+    const { nome, sobrenome, email, endereco, cidade, pais, cep } = this.state;
     event.preventDefault();
+    const aluno = {
+      'nome': nome,
+      'sobrenome': sobrenome,
+      'email': email,
+      'endereco': endereco,
+      'cidade': cidade,
+      'pais': pais,
+      'cep': cep,
+      status: 'inscrito'
+    }
+    this.setState({ alunos: [...this.state.alunos, aluno] });
   }
 
 
   render() {
-    const {aluno, alunos} = this.state;
-    console.log(alunos);
+    const { alunos } = this.state;
     return (
       <>
         <div className="content">
@@ -55,7 +62,7 @@ class User extends React.Component {
                 <CardBody>
                   <Form>
                     <Row>
-                      <Col className="px-1" md="3">
+                      <Col md="4">
                         <FormGroup>
                           <label>Nome</label>
                           <Input
@@ -65,7 +72,7 @@ class User extends React.Component {
                           />
                         </FormGroup>
                       </Col>
-                      <Col className="px-1" md="3">
+                      <Col md="4">
                         <FormGroup>
                           <label>Sobrenome</label>
                           <Input
@@ -76,13 +83,13 @@ class User extends React.Component {
                         </FormGroup>
                       </Col>
 
-                      <Col className="pl-1" md="4">
+                      <Col md="4">
                         <FormGroup>
                           <label htmlFor="exampleInputEmail1">
                             Email
                           </label>
-                          <Input 
-                            type="email" 
+                          <Input
+                            type="email"
                             onChange={this.handleChange}
                             name="email"
                           />
@@ -125,9 +132,9 @@ class User extends React.Component {
                       <Col className="pl-1" md="4">
                         <FormGroup>
                           <label>CEP</label>
-                          <Input placeholder="99999999" 
+                          <Input placeholder="99999999"
                             onChange={this.handleChange}
-                            type="number" 
+                            type="number"
                             name="cep"
                           />
                         </FormGroup>
@@ -139,6 +146,7 @@ class User extends React.Component {
                           className="btn-round"
                           color="primary"
                           type="submit"
+                          onClick={this.handleSubmit}
                         >
                           Adicionar Aluno
                         </Button>
@@ -151,30 +159,34 @@ class User extends React.Component {
                 <CardHeader>
                   <CardTitle tag="h4">Alunos Adicionados Recentementes</CardTitle>
                 </CardHeader>
-                <CardBody>
-                  <ul className="list-unstyled team-members">
-                    <li>
-                      <Row>
-                        <Col md="7" xs="7">
-                          DJ Khaled <br />
-                          <span className="text-muted">
-                            <small>Atualizado</small>
-                          </span>
-                        </Col>
-                        <Col className="text-right" md="3" xs="3">
-                          <Button
-                            className="btn-round btn-icon"
-                            color="success"
-                            outline
-                            size="sm"
-                          >
-                            <i className="fa fa-check" />
-                          </Button>
-                        </Col>
-                      </Row>
-                    </li>
-                  </ul>
-                </CardBody>
+                {alunos.map((aluno, index) => {
+                  return (
+                    <CardBody>
+                      <ul className="list-unstyled team-members">
+                        <li key={index}>
+                          <Row>
+                            <Col md="9" xs="7">
+                              {aluno.nome} {aluno.sobrenome}<br />
+                              <span className="text-muted">
+                                <small>{aluno.status}</small>
+                              </span>
+                            </Col>
+                            <Col className="text-right" md="3" xs="3">
+                              <Button
+                                className="btn-round btn-icon"
+                                color="success"
+                                outline
+                                size="sm"
+                              >
+                                <i className="fa fa-check" />
+                              </Button>
+                            </Col>
+                          </Row>
+                        </li>
+                      </ul>
+                    </CardBody>
+                  )
+                })}
               </Card>
             </Col>
           </Row>
