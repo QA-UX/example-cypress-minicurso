@@ -15,17 +15,17 @@ class Footer extends React.Component {
             <nav className="footer-nav">
               <ul>
                 <li>
-                  <a href="https://unifcv.edu.br/" target="_blank">
+                  <a href="https://unifcv.edu.br/" test="unifcv" target="_blank">
                     UniFCV
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.cypress.io/" target="_blank">
+                  <a href="https://www.cypress.io/" test="cypress" target="_blank">
                     Cypress
                   </a>
                 </li>
                 <li>
-                  <a href="https://reactjs.org/" target="_blank">
+                  <a href="https://reactjs.org/" test="reactjs" target="_blank">
                     ReactJS
                   </a>
                 </li>

@@ -21,6 +21,7 @@ class User extends React.Component {
     sobrenome: '',
     email: '',
     endereco: '',
+    celular: '',
     cidade: '',
     pais: '',
     cep: ''
@@ -32,7 +33,7 @@ class User extends React.Component {
   }
 
   handleSubmit = (event) => {
-    const { nome, sobrenome, email, endereco, cidade, pais, cep } = this.state;
+    const { nome, sobrenome, email, endereco, cidade, pais, cep, celular } = this.state;
     event.preventDefault();
     const aluno = {
       'nome': nome,
@@ -42,9 +43,18 @@ class User extends React.Component {
       'cidade': cidade,
       'pais': pais,
       'cep': cep,
+      'celular': celular,
       status: 'inscrito'
     }
     this.setState({ alunos: [...this.state.alunos, aluno] });
+  }
+
+  confirmUser = (index) => {
+    const newAlunos = [...this.state.alunos];
+    if (index !== -1) {
+      newAlunos.splice(index, 1);
+      this.setState({ alunos: newAlunos });
+    }
   }
 
 
@@ -97,13 +107,23 @@ class User extends React.Component {
                       </Col>
                     </Row>
                     <Row>
-                      <Col md="12">
+                      <Col md="8">
                         <FormGroup>
                           <label>Endereço</label>
                           <Input
                             type="text"
                             name="endereco"
                             onChange={this.handleChange}
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col className="pl-1" md="4">
+                        <FormGroup>
+                          <label>Celular</label>
+                          <Input placeholder="99999999"
+                            onChange={this.handleChange}
+                            type="number"
+                            name="celular"
                           />
                         </FormGroup>
                       </Col>
@@ -165,7 +185,7 @@ class User extends React.Component {
                       <ul className="list-unstyled team-members">
                         <li key={index}>
                           <Row>
-                            <Col md="9" xs="7">
+                            <Col md="9" xs="7" test={`aluno-${index}-${aluno.celular}`}>
                               {aluno.nome} {aluno.sobrenome}<br />
                               <span className="text-muted">
                                 <small>{aluno.status}</small>
@@ -173,8 +193,10 @@ class User extends React.Component {
                             </Col>
                             <Col className="text-right" md="3" xs="3">
                               <Button
+                                test={`aluno-${index}-${aluno.celular}`}
                                 className="btn-round btn-icon"
                                 color="success"
+                                onClick={() => this.confirmUser(index)}
                                 outline
                                 size="sm"
                               >

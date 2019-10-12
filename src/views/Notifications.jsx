@@ -71,6 +71,7 @@ class Notifications extends React.Component {
                           <UncontrolledAlert
                             className="alert-with-icon"
                             color="info"
+                            test="0"
                             fade={false}
                           >
                             <span
@@ -84,6 +85,7 @@ class Notifications extends React.Component {
                           <UncontrolledAlert
                             className="alert-with-icon"
                             color="info"
+                            test="1"
                             fade={false}
                           >
                             <span
@@ -97,6 +99,7 @@ class Notifications extends React.Component {
                           <UncontrolledAlert
                             className="alert-with-icon"
                             color="info"
+                            test="2"
                             fade={false}
                           >
                             <span
@@ -110,6 +113,7 @@ class Notifications extends React.Component {
                           <UncontrolledAlert
                             className="alert-with-icon"
                             color="info"
+                            test="3"
                             fade={false}
                           >
                             <span
@@ -123,6 +127,7 @@ class Notifications extends React.Component {
                           <UncontrolledAlert
                             className="alert-with-icon"
                             color="info"
+                            test="4"
                             fade={false}
                           >
                             <span
@@ -133,6 +138,133 @@ class Notifications extends React.Component {
                               Curso 5554 Tuma 30 foi aprovado pelo MEC
                             </span>
                           </UncontrolledAlert>
+                          <UncontrolledAlert
+                            className="alert-with-icon"
+                            color="info"
+                            test="5"
+                            fade={false}
+                          >
+                            <span
+                              data-notify="icon"
+                              className="nc-icon nc-bell-55"
+                            />
+                            <span data-notify="message">
+                              Curso 5000 Tuma 01 foi aprovado pelo MEC
+                            </span>
+                          </UncontrolledAlert>
+                          <UncontrolledAlert
+                            className="alert-with-icon"
+                            color="info"
+                            fade={false}
+                            test="6"
+                          >
+                            <span
+                              data-notify="icon"
+                              className="nc-icon nc-bell-55"
+                            />
+                            <span data-notify="message">
+                              Curso 5552 Tuma 31 obteve nota máxima no MEC
+                            </span>
+                          </UncontrolledAlert>
+                          <UncontrolledAlert
+                            className="alert-with-icon"
+                            color="info"
+                            test="7"
+                            fade={false}
+                          >
+                            <span
+                              data-notify="icon"
+                              className="nc-icon nc-bell-55"
+                            />
+                            <span data-notify="message">
+                              Aluno 10855-18 teve sua inscrição recusada 
+                            </span>
+                          </UncontrolledAlert>
+                          <UncontrolledAlert
+                            className="alert-with-icon"
+                            color="info"
+                            test="8"
+                            fade={false}
+                          >
+                            <span
+                              data-notify="icon"
+                              className="nc-icon nc-bell-55"
+                            />
+                            <span data-notify="message">
+                              Curso 5777 Tuma 10 obteve nota 4 no MEC
+                            </span>
+                          </UncontrolledAlert>
+                          <UncontrolledAlert
+                            className="alert-with-icon"
+                            color="info"
+                            test="9"
+                            fade={false}
+                          >
+                            <span
+                              data-notify="icon"
+                              className="nc-icon nc-bell-55"
+                            />
+                            <span data-notify="message">
+                              O Aluno 10444-10 necessita enviar os documentos restantes
+                            </span>
+                          </UncontrolledAlert>
+                          <UncontrolledAlert
+                            className="alert-with-icon"
+                            color="info"
+                            test="10"
+                            fade={false}
+                          >
+                            <span
+                              data-notify="icon"
+                              className="nc-icon nc-bell-55"
+                            />
+                            <span data-notify="message">
+                              O Aluno 11455-18 não entregou os documentos no prazo
+                            </span>
+                          </UncontrolledAlert>
+                          <UncontrolledAlert
+                            className="alert-with-icon"
+                            color="info"
+                            test="11"
+                            fade={false}
+                          >
+                            <span
+                              data-notify="icon"
+                              className="nc-icon nc-bell-55"
+                            />
+                            <span data-notify="message">
+                              Curso 3333 Tuma 55 teve inicio dia 14/10/2019
+                            </span>
+                          </UncontrolledAlert>
+                          <UncontrolledAlert
+                            className="alert-with-icon"
+                            color="info"
+                            test="12"
+                            fade={false}
+                          >
+                            <span
+                              data-notify="icon"
+                              className="nc-icon nc-bell-55"
+                            />
+                            <span data-notify="message">
+                              Curso 5522 Tuma 20 teve seu incio adiado
+                            </span>
+                          </UncontrolledAlert>
+                          <UncontrolledAlert
+                            className="alert-with-icon"
+                            color="info"
+                            fade={false}
+                            test="13"
+                          >
+                            <span
+                              data-notify="icon"
+                              className="nc-icon nc-bell-55"
+                            />
+                            <span data-notify="message">
+                              Curso 222 Tuma 10 teve inicio no dia 16/10/2019
+                            </span>
+                          </UncontrolledAlert>
+
                         </CardBody>
                       </Card>
                     </Col>
