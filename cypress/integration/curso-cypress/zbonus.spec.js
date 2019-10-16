@@ -9,7 +9,14 @@
 describe('acessar google', () =>{
   it('acessar página elotech', () =>{
     cy.visit('https://www.google.com')
+    cy.get('input[class="gLFyf gsfi"').type('Elotech Notícias {enter}')
     
-    //continuar
-  });
+    cy.get('.rc')
+      .get('.r')
+      .find('a[href="https://www.elotech.com.br/blog/"]').click()
+      .wait(2000)
+    
+    cy.get('.pageheader-title').should('contain', 'Notícias');
+    
+  })
 })
