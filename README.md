@@ -4,7 +4,6 @@ Repositório criado para ser utilizado como prática no Minicurso de teste autom
 
 Palestrantes: João Martins Filho e Luana Naressi
 
-
 ## Para Utilizar
 
 1. Realizar o download do projeto;
